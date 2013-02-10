@@ -1,3 +1,8 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class RegisterRequest {
 	private String username;
 	private String password;
@@ -18,7 +23,13 @@ public class RegisterRequest {
 		this.password = password;
 	}
 	
-	public String doRegister() {
-		return null;
+	public String doRegister() throws ClassNotFoundException, SQLException {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","surgeon");
+		Statement statement = con.createStatement();
+		String sql = "INSERT INTO members(username,password) VALUES('" + username + "','" + password + "')";
+		statement.executeUpdate(sql);
+		return "success";
 	}
 }
