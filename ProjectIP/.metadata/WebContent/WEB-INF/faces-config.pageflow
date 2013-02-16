@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13610091884980" configfile="/ProjectIP/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index" x="361" y="167" id="pf13610102813931" path="/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="index" x="372" y="84" id="pf13610102813931" outlinks="pf13610117426802 pf13610117426803" inlinks="pf13610120788096 pf13610130076437" path="/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="home" x="180" y="192" id="pf13610117426804" outlinks="pf13610130076437" inlinks="pf13610117426803" path="/home.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="error" x="528" y="192" id="pf13610117426805" outlinks="pf13610120788096" inlinks="pf13610117426802" path="/error.jsp"/>
+  <links id="pf13610117426802" target="pf13610117426805" source="pf13610102813931" outcome="error"/>
+  <links id="pf13610117426803" target="pf13610117426804" source="pf13610102813931" outcome="success"/>
+  <links id="pf13610120788096" target="pf13610102813931" source="pf13610117426805" outcome="try"/>
+  <links id="pf13610130076437" target="pf13610102813931" source="pf13610117426804" outcome="again"/>
 </pageflow:Pageflow>
