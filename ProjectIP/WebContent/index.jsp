@@ -16,7 +16,11 @@
 		<br><br><br><br><br><br><br>
 		<center>
 			<h:outputLabel value = "Formula: " for = "formula"/>
-			<h:inputText value = "#{inputRequest.formula}" id = "username"/>
+			<h:inputText value = "#{inputRequest.formula}" id = "formula">
+				<f:validator validatorId="OddValidator"/>
+			</h:inputText>
+			<br><br>
+			<h:message for="formula" errorClass="errorMessages" />
 			<br><br>
 			<h:commandButton value="Go!" action = "#{inputRequest.doInput}"/>
 		</center>
